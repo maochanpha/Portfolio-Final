@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,7 +47,13 @@
                 linear-gradient(180deg, #fbf8f4 0%, #f4efe8 100%);
         }
 
-        h1, h2, h3, h4, h5, .brand, .stat-value {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        .brand,
+        .stat-value {
             font-family: "Space Grotesk", sans-serif;
             letter-spacing: -0.03em;
         }
@@ -686,398 +693,397 @@
         }
     </style>
 </head>
+
 <body>
-<div class="page-shell">
-    <nav class="navbar navbar-expand-lg fixed-top glass-nav">
-        <div class="container px-3 px-lg-4">
-            <a class="navbar-brand brand" href="#home">Mao ChanPha<span>.</span></a>
+    <div class="page-shell">
+        <nav class="navbar navbar-expand-lg fixed-top glass-nav">
+            <div class="container px-3 px-lg-4">
+                <a class="navbar-brand brand" href="#home">Mao ChanPha<span>.</span></a>
 
-            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3 py-3 py-lg-0">
-                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                    <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
-                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-7">
-                    <span class="eyebrow">
-                        <span class="eyebrow-dot"></span>
-                        Laravel Developer
-                    </span>
-
-                    <h1 class="hero-title">
-                        Building <span class="text-accent">clean</span>, modern websites with purpose.
-                    </h1>
-
-                    <p class="hero-copy">
-                        I'm ChanPha, a Computer Science student focused on Laravel, PHP, MySQL, and responsive frontend work. I enjoy turning ideas into polished, user-friendly experiences that feel simple and thoughtful.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a href="#projects" class="btn-main">
-                            <i class="bi bi-grid"></i>
-                            View Projects
-                        </a>
-                        <a href="#contact" class="btn-secondary">
-                            <i class="bi bi-send"></i>
-                            Let's Connect
-                        </a>
-                    </div>
-
-                    <div class="hero-meta">
-                        <div class="stat-card">
-                            <span class="stat-value">{{ $projects->count() }}</span>
-                            <span class="stat-label">Projects showcased</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-value">{{ $skills->count() }}</span>
-                            <span class="stat-label">Skills in my stack</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-value">{{ $educations->count() }}</span>
-                            <span class="stat-label">Education milestones</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-5">
-                    <div class="profile-panel">
-                        <img src="{{ asset('images/81T0GmGsrZL.jpg') }}" class="profile-image" alt="Portrait of ChanPha">
-                        <div class="floating-note">
-                            <small>Current focus</small>
-                            Building responsive Laravel portfolio and CRUD experiences with clean UI details.
-                        </div>
-                    </div>
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3 py-3 py-lg-0">
+                        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                        <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+                        <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </nav>
 
-    <section id="about" class="section-space pt-0">
-        <div class="container">
-            <div class="row g-4 align-items-stretch">
-                <div class="col-lg-5">
-                    <div class="section-heading mb-0">
-                        <div class="section-kicker">About Me</div>
-                        <h2 class="section-title">A clean interface starts with clear thinking.</h2>
-                        <p class="section-copy">
-                            I study Computer Science at Western University Cambodia and enjoy designing websites that feel modern, readable, and easy to use. My goal is to keep things visually strong without making them complicated.
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-7">
+                        <span class="eyebrow">
+                            <span class="eyebrow-dot"></span>
+                            Laravel Developer
+                        </span>
+
+                        <h1 class="hero-title">
+                            Building <span class="text-accent">clean</span>, modern websites with purpose.
+                        </h1>
+
+                        <p class="hero-copy">
+                            I'm ChanPha, a Computer Science student focused on Laravel, PHP, MySQL, and responsive frontend work. I enjoy turning ideas into polished, user-friendly experiences that feel simple and thoughtful.
                         </p>
+
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn-main">
+                                <i class="bi bi-grid"></i>
+                                View Projects
+                            </a>
+                            <a href="#contact" class="btn-secondary">
+                                <i class="bi bi-send"></i>
+                                Let's Connect
+                            </a>
+                        </div>
+
+                        <div class="hero-meta">
+                            <div class="stat-card">
+                                <span class="stat-value">{{ $projects->count() }}</span>
+                                <span class="stat-label">Projects showcased</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-value">{{ $skills->count() }}</span>
+                                <span class="stat-label">Skills in my stack</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-value">{{ $educations->count() }}</span>
+                                <span class="stat-label">Education milestones</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-lg-7">
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="panel">
-                                <div class="icon-chip"><i class="bi bi-code-slash"></i></div>
-                                <h5>Development</h5>
-                                <p>Laravel, PHP, MySQL, and practical full-stack problem solving for portfolio and business websites.</p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="panel">
-                                <div class="icon-chip"><i class="bi bi-phone"></i></div>
-                                <h5>Responsive UI</h5>
-                                <p>Layouts that stay elegant across desktop, tablet, and mobile without feeling crowded or fragile.</p>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="about-highlight">
-                                <h5 class="mb-3">What I care about</h5>
-                                <p>Readable structure, balanced spacing, fast-loading pages, and interfaces that help people understand what matters right away.</p>
+                    <div class="col-lg-5">
+                        <div class="profile-panel">
+                            <img src="{{ asset('images/81T0GmGsrZL.jpg') }}" class="profile-image">
+                            <div class="floating-note">
+                                <small>Current focus</small>
+                                Building responsive Laravel portfolio and CRUD experiences with clean UI details.
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="section-space">
-        <div class="container">
-            <div class="section-heading">
-                <div class="section-kicker">Skills</div>
-                <h2 class="section-title">Tools I use to build polished web experiences.</h2>
-                <p class="section-copy">
-                    A focused stack helps me move faster and keep the final product stable, maintainable, and easy to improve.
-                </p>
-            </div>
-
-            @if($skills->isNotEmpty())
-                <div class="skills-grid">
-                    @foreach($skills as $skill)
-                        <div class="skill-card">
-                            <div class="skill-index">{{ str_pad((string) $loop->iteration, 2, '0', STR_PAD_LEFT) }}</div>
-                            <h5>{{ $skill->name }}</h5>
-                            <p>{{ $skill->description ?: 'A core part of my development toolkit for building reliable web projects.' }}</p>
-                        </div>
-                    @endforeach
-                </div>
-            @else
-                <div class="empty-card">
-                    Skills will appear here once they are added from the admin panel.
-                </div>
-            @endif
-        </div>
-    </section>
-
-    <section id="education" class="section-space pt-0">
-        <div class="container">
-            <div class="section-heading">
-                <div class="section-kicker">Education</div>
-                <h2 class="section-title">The foundation behind my work.</h2>
-                <p class="section-copy">
-                    My academic path continues to shape how I approach software, structure problems, and improve my craft.
-                </p>
-            </div>
-
-            @if($educations->isNotEmpty())
-                <div class="timeline-stack">
-                    @foreach($educations as $education)
-                        <div class="timeline-card">
-                            <div class="timeline-content">
-                                <div class="timeline-date">
-                                    {{ \Carbon\Carbon::parse($education->start_date)->format('M Y') }}
-                                    -
-                                    {{ $education->end_date ? \Carbon\Carbon::parse($education->end_date)->format('M Y') : 'Present' }}
-                                </div>
-                                <h5>{{ $education->school }}</h5>
-                                <p>{{ $education->degree }} in {{ $education->field_of_study }}</p>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            @else
-                <div class="empty-card">
-                    Education details will appear here when records are available.
-                </div>
-            @endif
-        </div>
-    </section>
-
-    <section id="projects" class="section-space pt-0">
-        <div class="container">
-            <div class="section-heading">
-                <div class="section-kicker">Projects</div>
-                <h2 class="section-title">Selected work with a cleaner visual story.</h2>
-                <p class="section-copy">
-                    A few examples of projects I've built, from database-driven applications to portfolio-style interfaces.
-                </p>
-            </div>
-
-            @if($projects->isNotEmpty())
-                <div class="projects-grid">
-                    @foreach($projects as $project)
-                        <article class="project-card">
-                            <div class="project-media">
-                                @if($project->image)
-                                    <img src="{{ asset($project->image) }}" alt="{{ $project->title }}">
-                                @else
-                                    <i class="bi bi-window project-fallback-icon"></i>
-                                @endif
-                            </div>
-
-                            <div class="project-body">
-                                <h5>{{ $project->title }}</h5>
-                                <p>{{ $project->description ?: 'Project details will be added soon.' }}</p>
-
-                                @if($project->demo || $project->link)
-                                    <div class="project-links">
-                                        @if($project->demo)
-                                            <a href="{{ $project->demo }}" target="_blank" rel="noopener noreferrer" class="mini-link">
-                                                <i class="bi bi-box-arrow-up-right"></i>
-                                                Live Demo
-                                            </a>
-                                        @endif
-
-                                        @if($project->link)
-                                            <a href="{{ $project->link }}" target="_blank" rel="noopener noreferrer" class="mini-link">
-                                                <i class="bi bi-github"></i>
-                                                Source Code
-                                            </a>
-                                        @endif
-                                    </div>
-                                @endif
-                            </div>
-                        </article>
-                    @endforeach
-                </div>
-            @else
-                <div class="empty-card">
-                    Projects will appear here after they are added from the admin dashboard.
-                </div>
-            @endif
-        </div>
-    </section>
-
-    <section id="contact" class="section-space pt-0">
-        <div class="container">
-            <div class="contact-wrap">
-                @if(session('success'))
-                    <div class="alert alert-success contact-alert">
-                        {{ session('success') }}
-                    </div>
-                @endif
-
-                @if(session('warning'))
-                    <div class="alert alert-warning contact-alert">
-                        {{ session('warning') }}
-                    </div>
-                @endif
-
-                @if($errors->any())
-                    <div class="alert alert-danger contact-alert">
-                        <strong>Please check your contact form:</strong>
-                        <ul class="mb-0 mt-2 ps-3">
-                            @foreach($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
+        <section id="about" class="section-space pt-0">
+            <div class="container">
                 <div class="row g-4 align-items-stretch">
                     <div class="col-lg-5">
                         <div class="section-heading mb-0">
-                            <div class="section-kicker text-white-50">Contact</div>
-                            <h2 class="section-title mb-3">Let's build something thoughtful together.</h2>
+                            <div class="section-kicker">About Me</div>
+                            <h2 class="section-title">A clean interface starts with clear thinking.</h2>
                             <p class="section-copy">
-                                If you have a project, internship, or collaboration in mind, I'd be happy to connect and talk through it.
+                                I study Computer Science at Western University Cambodia and enjoy designing websites that feel modern, readable, and easy to use. My goal is to keep things visually strong without making them complicated.
                             </p>
-                        </div>
-
-                        <div class="hero-actions mt-4">
-                            <a href="mailto:maochanpha@gmail.com" class="btn-main">
-                                <i class="bi bi-envelope"></i>
-                                Email Me
-                            </a>
-                            <a href="#home" class="btn-secondary">
-                                <i class="bi bi-arrow-up-right"></i>
-                                Back to Top
-                            </a>
-                        </div>
-
-                        <div class="row g-3 mt-2">
-                            <div class="col-md-6">
-                                <div class="contact-card h-100">
-                                    <div class="icon-chip bg-white text-dark"><i class="bi bi-envelope-paper"></i></div>
-                                    <h5>Email</h5>
-                                    <p>Best for project discussions and opportunities.</p>
-                                    <a href="mailto:maochanpha@gmail.com" class="contact-link">maochanpha@gmail.com</a>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="contact-card h-100">
-                                    <div class="icon-chip bg-white text-dark"><i class="bi bi-telephone"></i></div>
-                                    <h5>Phone</h5>
-                                    <p>Available for direct contact when needed.</p>
-                                    <a href="tel:0963399779" class="contact-link">0963399779</a>
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <div class="contact-card">
-                                    <div class="icon-chip bg-white text-dark"><i class="bi bi-stars"></i></div>
-                                    <h5>What you can expect</h5>
-                                    <p>A calm workflow, clean implementation, and strong attention to detail from layout to final polish.</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
                     <div class="col-lg-7">
-                        <div class="contact-form-card h-100 bg-white">
-                            <div class="p-4 p-lg-5 text-dark">
-                                <form action="{{ route('contact') }}" method="POST">
-                                    @csrf
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="panel">
+                                    <div class="icon-chip"><i class="bi bi-code-slash"></i></div>
+                                    <h5>Development</h5>
+                                    <p>Laravel, PHP, MySQL, and practical full-stack problem solving for portfolio and business websites.</p>
+                                </div>
+                            </div>
 
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                        <label for="name" class="form-label fw-semibold">Your Name</label>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            value="{{ old('name') }}"
-                                            class="form-control contact-input @error('name') is-invalid @enderror"
-                                            placeholder="Enter your name"
-                                            required
-                                        >
-                                        @error('name')
-                                            <div class="invalid-feedback d-block">{{ $message }}</div>
-                                        @enderror
-                                        </div>
+                            <div class="col-md-6">
+                                <div class="panel">
+                                    <div class="icon-chip"><i class="bi bi-phone"></i></div>
+                                    <h5>Responsive UI</h5>
+                                    <p>Layouts that stay elegant across desktop, tablet, and mobile without feeling crowded or fragile.</p>
+                                </div>
+                            </div>
 
-                                        <div class="col-md-6 mb-3">
-                                        <label for="email" class="form-label fw-semibold">Your Email</label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            value="{{ old('email') }}"
-                                            class="form-control contact-input @error('email') is-invalid @enderror"
-                                            placeholder="Enter your email"
-                                            required
-                                        >
-                                        @error('email')
-                                            <div class="invalid-feedback d-block">{{ $message }}</div>
-                                        @enderror
-                                        </div>
-
-                                        <div class="col-12 mb-3">
-                                        <label for="message" class="form-label fw-semibold">Message</label>
-                                        <textarea
-                                            id="message"
-                                            name="message"
-                                            rows="6"
-                                            class="form-control contact-input @error('message') is-invalid @enderror"
-                                            placeholder="Write your message here..."
-                                            required
-                                        >{{ old('message') }}</textarea>
-                                        @error('message')
-                                            <div class="invalid-feedback d-block">{{ $message }}</div>
-                                        @enderror
-                                        </div>
-
-                                        <div class="col-12">
-                                        <button type="submit" class="btn btn-main border-0">
-                                            <i class="bi bi-send me-2"></i>
-                                            Send Message
-                                        </button>
-                                    </div>
-                                    </div>
-                                </form>
+                            <div class="col-12">
+                                <div class="about-highlight">
+                                    <h5 class="mb-3">What I care about</h5>
+                                    <p>Readable structure, balanced spacing, fast-loading pages, and interfaces that help people understand what matters right away.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="footer-note">
-        <div class="container">
-            &copy; 2026 ChanPha Mao. All rights reserved.
-        </div>
-    </footer>
-</div>
+        <section id="skills" class="section-space">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="section-kicker">Skills</div>
+                    <h2 class="section-title">Tools I use to build polished web experiences.</h2>
+                    <p class="section-copy">
+                        A focused stack helps me move faster and keep the final product stable, maintainable, and easy to improve.
+                    </p>
+                </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                @if($skills->isNotEmpty())
+                <div class="skills-grid">
+                    @foreach($skills as $skill)
+                    <div class="skill-card">
+                        <div class="skill-index">{{ str_pad((string) $loop->iteration, 2, '0', STR_PAD_LEFT) }}</div>
+                        <h5>{{ $skill->name }}</h5>
+                        <p>{{ $skill->description ?: 'A core part of my development toolkit for building reliable web projects.' }}</p>
+                    </div>
+                    @endforeach
+                </div>
+                @else
+                <div class="empty-card">
+                    Skills will appear here once they are added from the admin panel.
+                </div>
+                @endif
+            </div>
+        </section>
+
+        <section id="education" class="section-space pt-0">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="section-kicker">Education</div>
+                    <h2 class="section-title">The foundation behind my work.</h2>
+                    <p class="section-copy">
+                        My academic path continues to shape how I approach software, structure problems, and improve my craft.
+                    </p>
+                </div>
+
+                @if($educations->isNotEmpty())
+                <div class="timeline-stack">
+                    @foreach($educations as $education)
+                    <div class="timeline-card">
+                        <div class="timeline-content">
+                            <div class="timeline-date">
+                                {{ \Carbon\Carbon::parse($education->start_date)->format('M Y') }}
+                                -
+                                {{ $education->end_date ? \Carbon\Carbon::parse($education->end_date)->format('M Y') : 'Present' }}
+                            </div>
+                            <h5>{{ $education->school }}</h5>
+                            <p>{{ $education->degree }} in {{ $education->field_of_study }}</p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                @else
+                <div class="empty-card">
+                    Education details will appear here when records are available.
+                </div>
+                @endif
+            </div>
+        </section>
+
+        <section id="projects" class="section-space pt-0">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="section-kicker">Projects</div>
+                    <h2 class="section-title">Selected work with a cleaner visual story.</h2>
+                    <p class="section-copy">
+                        A few examples of projects I've built, from database-driven applications to portfolio-style interfaces.
+                    </p>
+                </div>
+
+                @if($projects->isNotEmpty())
+                <div class="projects-grid">
+                    @foreach($projects as $project)
+                    <article class="project-card">
+                        <div class="project-media">
+                            @if($project->image)
+                            <img src="{{ asset($project->image) }}" alt="{{ $project->title }}">
+                            @else
+                            <i class="bi bi-window project-fallback-icon"></i>
+                            @endif
+                        </div>
+
+                        <div class="project-body">
+                            <h5>{{ $project->title }}</h5>
+                            <p>{{ $project->description ?: 'Project details will be added soon.' }}</p>
+
+                            @if($project->demo || $project->link)
+                            <div class="project-links">
+                                @if($project->demo)
+                                <a href="{{ $project->demo }}" target="_blank" rel="noopener noreferrer" class="mini-link">
+                                    <i class="bi bi-box-arrow-up-right"></i>
+                                    Live Demo
+                                </a>
+                                @endif
+
+                                @if($project->link)
+                                <a href="{{ $project->link }}" target="_blank" rel="noopener noreferrer" class="mini-link">
+                                    <i class="bi bi-github"></i>
+                                    Source Code
+                                </a>
+                                @endif
+                            </div>
+                            @endif
+                        </div>
+                    </article>
+                    @endforeach
+                </div>
+                @else
+                <div class="empty-card">
+                    Projects will appear here after they are added from the admin dashboard.
+                </div>
+                @endif
+            </div>
+        </section>
+
+        <section id="contact" class="section-space pt-0">
+            <div class="container">
+                <div class="contact-wrap">
+                    @if(session('success'))
+                    <div class="alert alert-success contact-alert">
+                        {{ session('success') }}
+                    </div>
+                    @endif
+
+                    @if(session('warning'))
+                    <div class="alert alert-warning contact-alert">
+                        {{ session('warning') }}
+                    </div>
+                    @endif
+
+                    @if($errors->any())
+                    <div class="alert alert-danger contact-alert">
+                        <strong>Please check your contact form:</strong>
+                        <ul class="mb-0 mt-2 ps-3">
+                            @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+
+                    <div class="row g-4 align-items-stretch">
+                        <div class="col-lg-5">
+                            <div class="section-heading mb-0">
+                                <div class="section-kicker text-white-50">Contact</div>
+                                <h2 class="section-title mb-3">Let's build something thoughtful together.</h2>
+                                <p class="section-copy">
+                                    If you have a project, internship, or collaboration in mind, I'd be happy to connect and talk through it.
+                                </p>
+                            </div>
+
+                            <div class="hero-actions mt-4">
+                                <a href="mailto:maochanpha@gmail.com" class="btn-main">
+                                    <i class="bi bi-envelope"></i>
+                                    Email Me
+                                </a>
+                                <a href="#home" class="btn-secondary">
+                                    <i class="bi bi-arrow-up-right"></i>
+                                    Back to Top
+                                </a>
+                            </div>
+
+                            <div class="row g-3 mt-2">
+                                <div class="col-md-6">
+                                    <div class="contact-card h-100">
+                                        <div class="icon-chip bg-white text-dark"><i class="bi bi-envelope-paper"></i></div>
+                                        <h5>Email</h5>
+                                        <p>Best for project discussions and opportunities.</p>
+                                        <a href="mailto:maochanpha@gmail.com" class="contact-link">maochanpha@gmail.com</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="contact-card h-100">
+                                        <div class="icon-chip bg-white text-dark"><i class="bi bi-telephone"></i></div>
+                                        <h5>Phone</h5>
+                                        <p>Available for direct contact when needed.</p>
+                                        <a href="tel:0963399779" class="contact-link">0963399779</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="contact-card">
+                                        <div class="icon-chip bg-white text-dark"><i class="bi bi-stars"></i></div>
+                                        <h5>What you can expect</h5>
+                                        <p>A calm workflow, clean implementation, and strong attention to detail from layout to final polish.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7">
+                            <div class="contact-form-card h-100 bg-white">
+                                <div class="p-4 p-lg-5 text-dark">
+                                    <form action="{{ route('contact') }}" method="POST">
+                                        @csrf
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="name" class="form-label fw-semibold">Your Name</label>
+                                                <input
+                                                    type="text"
+                                                    id="name"
+                                                    name="name"
+                                                    value="{{ old('name') }}"
+                                                    class="form-control contact-input @error('name') is-invalid @enderror"
+                                                    placeholder="Enter your name"
+                                                    required>
+                                                @error('name')
+                                                <div class="invalid-feedback d-block">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+
+                                            <div class="col-md-6 mb-3">
+                                                <label for="email" class="form-label fw-semibold">Your Email</label>
+                                                <input
+                                                    type="email"
+                                                    id="email"
+                                                    name="email"
+                                                    value="{{ old('email') }}"
+                                                    class="form-control contact-input @error('email') is-invalid @enderror"
+                                                    placeholder="Enter your email"
+                                                    required>
+                                                @error('email')
+                                                <div class="invalid-feedback d-block">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+
+                                            <div class="col-12 mb-3">
+                                                <label for="message" class="form-label fw-semibold">Message</label>
+                                                <textarea
+                                                    id="message"
+                                                    name="message"
+                                                    rows="6"
+                                                    class="form-control contact-input @error('message') is-invalid @enderror"
+                                                    placeholder="Write your message here..."
+                                                    required>{{ old('message') }}</textarea>
+                                                @error('message')
+                                                <div class="invalid-feedback d-block">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-main border-0">
+                                                    <i class="bi bi-send me-2"></i>
+                                                    Send Message
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer-note">
+            <div class="container">
+                &copy; 2026 ChanPha Mao. All rights reserved.
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
