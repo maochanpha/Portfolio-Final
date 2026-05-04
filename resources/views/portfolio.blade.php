@@ -754,7 +754,7 @@
 
                 <div class="col-lg-5">
                     <div class="profile-panel">
-                        <img src="{{ asset('images/maochanpha.jpg') }}" class="profile-image" alt="Portrait of ChanPha">
+                        <img src="{{ asset('images/81T0GmGsrZL.jpg') }}" class="profile-image" alt="Portrait of ChanPha">
                         <div class="floating-note">
                             <small>Current focus</small>
                             Building responsive Laravel portfolio and CRUD experiences with clean UI details.
