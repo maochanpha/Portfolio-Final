@@ -1,215 +1,174 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Admin Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+@extends('layouts.admin-modern')
 
-    <style>
-        body {
-            background: #f5f7fb;
-            font-family: 'Segoe UI', sans-serif;
-        }
+@section('title', 'Admin Dashboard')
 
-        .sidebar {
-            width: 260px;
-            min-height: 100vh;
-            background: linear-gradient(180deg, #111827, #1f2937);
-            position: fixed;
-            left: 0;
-            top: 0;
-            padding: 25px;
-            color: white;
-        }
-
-        .sidebar h3 {
-            font-weight: 800;
-            margin-bottom: 35px;
-        }
-
-        .sidebar a {
-            display: block;
-            color: #d1d5db;
-            text-decoration: none;
-            padding: 13px 16px;
-            border-radius: 14px;
-            margin-bottom: 10px;
-            transition: 0.3s;
-            font-weight: 500;
-        }
-
-        .sidebar a:hover,
-        .sidebar a.active {
-            background: #6366f1;
-            color: white;
-        }
-
-        .main {
-            margin-left: 260px;
-            padding: 35px;
-        }
-
-        .topbar {
-            background: white;
-            border-radius: 24px;
-            padding: 24px 28px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-            margin-bottom: 30px;
-        }
-
-        .stat-card {
-            border: none;
-            border-radius: 26px;
-            padding: 26px;
-            color: white;
-            min-height: 190px;
-            box-shadow: 0 18px 35px rgba(0,0,0,0.12);
-            transition: 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-6px);
-        }
-
-        .stat-card h5 {
-            font-size: 15px;
-            opacity: 0.9;
-        }
-
-        .stat-card h2 {
-            font-size: 44px;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-
-        .bg-project {
-            background: linear-gradient(135deg, #2563eb, #60a5fa);
-        }
-
-        .bg-skill {
-            background: linear-gradient(135deg, #16a34a, #86efac);
-        }
-
-        .bg-education {
-            background: linear-gradient(135deg, #9333ea, #c084fc);
-        }
-
-        .bg-message {
-            background: linear-gradient(135deg, #f97316, #fdba74);
-        }
-
-        .quick-card {
-            background: white;
-            border-radius: 26px;
-            padding: 28px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-        }
-
-        .btn-modern {
-            border-radius: 14px;
-            padding: 10px 18px;
-            font-weight: 600;
-        }
-
-        .btn-purple {
-            background: #9333ea;
-            color: white;
-        }
-
-        .btn-purple:hover {
-            background: #7e22ce;
-            color: white;
-        }
-
-        .user-badge {
-            background: #111827;
-            color: white;
-            padding: 12px 18px;
-            border-radius: 14px;
-            font-weight: 600;
-        }
-    </style>
-</head>
-
-<body>
-
-<div class="sidebar">
-    <h3>Portfolio Admin</h3>
-
-    <a href="{{ route('admin.dashboard') }}" class="active">Dashboard</a>
-    <a href="{{ route('projects.index') }}">Projects</a>
-    <a href="{{ route('skills.index') }}">Skills</a>
-    <a href="{{ route('education.index') }}">Education</a>
-    <a href="{{ route('contacts.index') }}">Messages</a>
-
-    <form method="POST" action="{{ route('logout') }}" class="mt-4">
-        @csrf
-        <button class="btn btn-danger w-100 rounded-3">Logout</button>
-    </form>
-</div>
-
-<div class="main">
-
-    <div class="topbar d-flex justify-content-between align-items-center">
+@section('content')
+    <section class="page-hero split-hero">
         <div>
-            <h2 class="mb-1 fw-bold">Admin Dashboard</h2>
-            <p class="text-muted mb-0">Manage your portfolio content easily</p>
-        </div>
+            <span class="section-kicker">
+                <span class="section-kicker-dot"></span>
+                Admin Workspace
+            </span>
+            <h1 class="hero-title">Dashboard overview for your portfolio.</h1>
+            <p class="hero-copy">
+                Keep your content current, readable, and ready to present. This dashboard gives you a clear snapshot of what is live and where to jump next.
+            </p>
 
-        <div class="user-badge">
-            {{ Auth::user()->name }}
-        </div>
-    </div>
-
-    <div class="row g-4 mb-4">
-
-        <div class="col-md-3">
-            <div class="stat-card bg-project">
-                <h5>Total Projects</h5>
-                <h2>{{ $projectCount }}</h2>
-                <a href="{{ route('projects.index') }}" class="btn btn-light btn-sm btn-modern">Manage</a>
+            <div class="button-row">
+                <a href="{{ route('projects.index') }}" class="btn-main">Manage Projects</a>
+                <a href="{{ route('contacts.index') }}" class="btn-light">Review Messages</a>
             </div>
         </div>
 
-        <div class="col-md-3">
-            <div class="stat-card bg-skill">
-                <h5>Total Skills</h5>
-                <h2>{{ $skillCount }}</h2>
-                <a href="{{ route('skills.index') }}" class="btn btn-light btn-sm btn-modern">Manage</a>
+        <div class="hero-side">
+            <p class="section-label" style="color: rgba(255,255,255,0.7);">Signed in as</p>
+            <h3 style="margin: 0 0 8px; font-size: 1.5rem;">{{ Auth::user()->name }}</h3>
+            <p class="section-copy" style="margin-bottom: 18px;">{{ Auth::user()->email }}</p>
+            <div class="tag amber">Portfolio Admin</div>
+        </div>
+    </section>
+
+    <section class="grid-2">
+        <article class="metric-card tone-blue">
+            <div class="metric-top">
+                <div>
+                    <div class="metric-label">Projects</div>
+                    <div class="metric-value">{{ $projectCount }}</div>
+                </div>
+                <span class="metric-icon">P</span>
+            </div>
+            <div>
+                <p class="metric-copy">Showcase your latest builds, update links, and keep each case study feeling complete.</p>
+                <a href="{{ route('projects.index') }}" class="metric-link">Manage projects -></a>
+            </div>
+        </article>
+
+        <article class="metric-card tone-green">
+            <div class="metric-top">
+                <div>
+                    <div class="metric-label">Skills</div>
+                    <div class="metric-value">{{ $skillCount }}</div>
+                </div>
+                <span class="metric-icon">S</span>
+            </div>
+            <div>
+                <p class="metric-copy">Refresh your stack details so the portfolio reflects what you actually use now.</p>
+                <a href="{{ route('skills.index') }}" class="metric-link">Manage skills -></a>
+            </div>
+        </article>
+
+        <article class="metric-card tone-purple">
+            <div class="metric-top">
+                <div>
+                    <div class="metric-label">Education</div>
+                    <div class="metric-value">{{ $educationCount }}</div>
+                </div>
+                <span class="metric-icon">E</span>
+            </div>
+            <div>
+                <p class="metric-copy">Keep your academic timeline and study background accurate and easy to scan.</p>
+                <a href="{{ route('education.index') }}" class="metric-link">Manage education -></a>
+            </div>
+        </article>
+
+        <article class="metric-card tone-amber">
+            <div class="metric-top">
+                <div>
+                    <div class="metric-label">Messages</div>
+                    <div class="metric-value">{{ $messageCount }}</div>
+                </div>
+                <span class="metric-icon">M</span>
+            </div>
+            <div>
+                <p class="metric-copy">Check recent contact submissions and respond quickly when new opportunities arrive.</p>
+                <a href="{{ route('contacts.index') }}" class="metric-link">View messages -></a>
+            </div>
+        </article>
+    </section>
+
+    <section class="grid-2">
+        <div class="surface-card">
+            <div class="section-label">Quick Actions</div>
+            <h2 class="section-title">Jump straight into the part you want to refine.</h2>
+            <p class="section-copy">
+                Each area below takes you directly into a content section so you can make focused updates without hunting through menus.
+            </p>
+
+            <div class="stack-list" style="margin-top: 22px;">
+                <a href="{{ route('projects.index') }}" class="item-card">
+                    <div>
+                        <div class="tag blue">Projects</div>
+                        <h3 class="item-title" style="margin-top: 14px;">Manage projects</h3>
+                        <p class="item-copy">Edit titles, descriptions, images, and links for your showcased work.</p>
+                    </div>
+                </a>
+
+                <a href="{{ route('skills.index') }}" class="item-card">
+                    <div>
+                        <div class="tag green">Skills</div>
+                        <h3 class="item-title" style="margin-top: 14px;">Manage skills</h3>
+                        <p class="item-copy">Update your stack so the portfolio stays aligned with your current strengths.</p>
+                    </div>
+                </a>
+
+                <a href="{{ route('education.index') }}" class="item-card">
+                    <div>
+                        <div class="tag purple">Education</div>
+                        <h3 class="item-title" style="margin-top: 14px;">Manage education</h3>
+                        <p class="item-copy">Keep your academic background and milestones clean and accurate.</p>
+                    </div>
+                </a>
+
+                <a href="{{ route('contacts.index') }}" class="item-card">
+                    <div>
+                        <div class="tag amber">Inbox</div>
+                        <h3 class="item-title" style="margin-top: 14px;">Review messages</h3>
+                        <p class="item-copy">Check contact submissions and stay responsive to internship or project inquiries.</p>
+                    </div>
+                </a>
             </div>
         </div>
 
-        <div class="col-md-3">
-            <div class="stat-card bg-education">
-                <h5>Total Education</h5>
-                <h2>{{ $educationCount }}</h2>
-                <a href="{{ route('education.index') }}" class="btn btn-light btn-sm btn-modern">Manage</a>
+        <div class="surface-card">
+            <div class="section-label">Status Guide</div>
+            <h2 class="section-title">What to review next</h2>
+            <p class="section-copy">
+                A small checklist to help you keep the admin side intentional instead of only functional.
+            </p>
+
+            <div class="stack-list" style="margin-top: 22px;">
+                <div class="item-card">
+                    <div>
+                        <h3 class="item-title">Project quality</h3>
+                        <p class="item-copy">Make sure each project has a clear title, strong description, and working links.</p>
+                    </div>
+                    <span class="tag blue">{{ $projectCount }} items</span>
+                </div>
+
+                <div class="item-card">
+                    <div>
+                        <h3 class="item-title">Skill clarity</h3>
+                        <p class="item-copy">Trim vague entries and keep descriptions concise so they read confidently.</p>
+                    </div>
+                    <span class="tag green">{{ $skillCount }} items</span>
+                </div>
+
+                <div class="item-card">
+                    <div>
+                        <h3 class="item-title">Timeline accuracy</h3>
+                        <p class="item-copy">Check start and end dates so the education story remains consistent.</p>
+                    </div>
+                    <span class="tag purple">{{ $educationCount }} items</span>
+                </div>
+
+                <div class="item-card">
+                    <div>
+                        <h3 class="item-title">Inbox follow-up</h3>
+                        <p class="item-copy">Review messages regularly so potential opportunities do not sit unanswered.</p>
+                    </div>
+                    <span class="tag amber">{{ $messageCount }} items</span>
+                </div>
             </div>
         </div>
-
-        <div class="col-md-3">
-            <div class="stat-card bg-message">
-                <h5>Total Messages</h5>
-                <h2>{{ $messageCount }}</h2>
-                <a href="{{ route('contacts.index') }}" class="btn btn-light btn-sm btn-modern">View Messages</a>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="quick-card">
-        <h4 class="fw-bold mb-2">Quick Actions</h4>
-        <p class="text-muted">Add, update, or manage your portfolio data.</p>
-
-        <a href="{{ route('projects.index') }}" class="btn btn-primary btn-modern">Manage Projects</a>
-        <a href="{{ route('skills.index') }}" class="btn btn-success btn-modern">Manage Skills</a>
-        <a href="{{ route('education.index') }}" class="btn btn-purple btn-modern">Manage Education</a>
-        <a href="{{ route('contacts.index') }}" class="btn btn-warning btn-modern">View Messages</a>
-    </div>
-
-</div>
-
-</body>
-</html>
+    </section>
+@endsection

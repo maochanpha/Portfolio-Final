@@ -1,156 +1,117 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Projects</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+@extends('layouts.admin-modern')
 
+@section('title', 'Projects')
+
+@push('styles')
     <style>
-        body {
-            background: #f5f7fb;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .page-header {
-            background: linear-gradient(135deg, #111827, #374151);
-            color: white;
-            border-radius: 28px;
-            padding: 35px;
-            margin-bottom: 35px;
-            box-shadow: 0 18px 40px rgba(0,0,0,0.15);
-        }
-
-        .page-header p {
-            color: #d1d5db;
-        }
-
-        .btn-modern {
-            border-radius: 14px;
-            padding: 11px 20px;
-            font-weight: 600;
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
         }
 
         .project-card {
-            border: none;
-            border-radius: 26px;
-            background: white;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.07);
-            transition: 0.3s;
-            overflow: hidden;
+            padding: 24px;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.78);
+            background: rgba(255, 255, 255, 0.78);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(16px);
         }
 
-        .project-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-        }
-
-        .project-icon {
-            width: 55px;
-            height: 55px;
+        .project-mark {
+            width: 54px;
+            height: 54px;
             border-radius: 18px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: white;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-weight: 800;
-            font-size: 22px;
+            background: rgba(76, 121, 211, 0.12);
+            color: var(--blue);
+            font-weight: 700;
+            font-size: 1.15rem;
             margin-bottom: 18px;
         }
 
         .project-desc {
-            min-height: 75px;
-            font-size: 14px;
-            line-height: 1.6;
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.7;
+            min-height: 95px;
         }
 
-        .action-btn {
-            border-radius: 12px;
-            padding: 8px 16px;
-            font-weight: 600;
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 22px;
         }
 
-        .empty-box {
-            background: white;
-            border-radius: 26px;
-            padding: 50px;
-            text-align: center;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+        @media (max-width: 1040px) {
+            .project-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 720px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
-</head>
+@endpush
 
-<body>
-
-<div class="container py-5">
-
-    <div class="page-header d-flex justify-content-between align-items-center">
+@section('content')
+    <section class="page-hero split-hero">
         <div>
-            <h2 class="fw-bold mb-2">Projects</h2>
-            <p class="mb-0">Manage your portfolio projects beautifully</p>
+            <span class="section-kicker">
+                <span class="section-kicker-dot"></span>
+                Projects Manager
+            </span>
+            <h1 class="hero-title">Manage your portfolio projects beautifully.</h1>
+            <p class="hero-copy">
+                Keep each project card complete with a clear title, a sharp description, and links that still work.
+            </p>
+
+            <div class="button-row">
+                <a href="{{ route('admin.dashboard') }}" class="btn-light">Back to Dashboard</a>
+                <a href="{{ route('project.create') }}" class="btn-main">Add Project</a>
+            </div>
         </div>
 
-        <div class="d-flex gap-2">
-            <a href="{{ route('admin.dashboard') }}" class="btn btn-light btn-modern">
-                Back
-            </a>
-            <a href="{{ route('project.create') }}" class="btn btn-warning btn-modern">
-                + Add Project
-            </a>
+        <div class="hero-side">
+            <p class="section-label" style="color: rgba(255,255,255,0.7);">Current total</p>
+            <h3 style="margin: 0 0 10px; font-size: 3rem;">{{ $projects->count() }}</h3>
+            <p class="section-copy">Projects ready to showcase on your portfolio.</p>
         </div>
-    </div>
+    </section>
 
     @if(session('success'))
-        <div class="alert alert-success rounded-4 border-0 shadow-sm mb-4">
-            {{ session('success') }}
-        </div>
+        <div class="alert-box success">{{ session('success') }}</div>
     @endif
 
     @if($projects->count() > 0)
-        <div class="row g-4">
+        <section class="project-grid">
             @foreach($projects as $p)
-            <div class="col-md-4">
-                <div class="project-card h-100">
-                    <div class="card-body p-4">
+                <article class="project-card">
+                    <div class="project-mark">{{ strtoupper(substr($p->title, 0, 1)) }}</div>
+                    <h3 class="item-title">{{ $p->title }}</h3>
+                    <p class="project-desc">{{ $p->description }}</p>
 
-                        <div class="project-icon">
-                            {{ strtoupper(substr($p->title, 0, 1)) }}
-                        </div>
-
-                        <h5 class="fw-bold mb-2">{{ $p->title }}</h5>
-
-                        <p class="text-muted project-desc">
-                            {{ $p->description }}
-                        </p>
-
-                        <div class="d-flex gap-2 mt-4">
-                            <a href="{{ route('projects.edit', $p->id) }}" class="btn btn-warning btn-sm action-btn">
-                                Edit
-                            </a>
-
-                            <a href="{{ route('projects.delete', $p->id) }}"
-                               class="btn btn-danger btn-sm action-btn"
-                               onclick="return confirm('Are you sure you want to delete this project?')">
-                                Delete
-                            </a>
-                        </div>
-
+                    <div class="card-actions">
+                        <a href="{{ route('projects.edit', $p->id) }}" class="btn-light">Edit</a>
+                        <a href="{{ route('projects.delete', $p->id) }}" class="btn-danger" onclick="return confirm('Are you sure you want to delete this project?')">Delete</a>
                     </div>
-                </div>
-            </div>
+                </article>
             @endforeach
-        </div>
+        </section>
     @else
-        <div class="empty-box">
-            <h4 class="fw-bold">No projects yet</h4>
-            <p class="text-muted">Click Add Project to create your first portfolio project.</p>
-
-            <a href="{{ route('project.create') }}" class="btn btn-dark btn-modern">
-                + Add Project
-            </a>
-        </div>
+        <section class="empty-state">
+            <h3>No projects yet</h3>
+            <p>Click Add Project to create your first portfolio project.</p>
+            <div class="button-row" style="justify-content: center;">
+                <a href="{{ route('project.create') }}" class="btn-secondary">Add Project</a>
+            </div>
+        </section>
     @endif
-
-</div>
-
-</body>
-</html>
+@endsection

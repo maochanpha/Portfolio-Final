@@ -1,25 +1,60 @@
-<x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-    </div>
+@extends('layouts.auth-modern')
 
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+@section('title', 'Forgot Password')
+@section('hero_kicker', 'Password Recovery')
+@section('hero_title')
+    Reset access without losing your <span>momentum</span>.
+@endsection
+@section('hero_text', 'Enter the email address tied to your account and Laravel will send you a secure link so you can choose a new password.')
+@section('hero_note', 'Recovery should feel calm and clear. This step keeps the workflow simple while preserving account security.')
+@section('form_kicker', 'Portfolio Admin')
+@section('form_title', 'Forgot password')
+@section('form_copy', 'Tell us which email belongs to your account and we will send a password reset link.')
+
+@section('content')
+    @if (session('status'))
+        <div class="status-box">
+            {{ session('status') }}
+        </div>
+    @endif
+
+    @if ($errors->any())
+        <div class="error-box">
+            Please review the highlighted fields and try again.
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
     <form method="POST" action="{{ route('password.email') }}">
         @csrf
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <div class="field">
+            <label for="email">Email Address</label>
+            <input
+                id="email"
+                type="email"
+                name="email"
+                value="{{ old('email') }}"
+                required
+                autofocus
+                autocomplete="username"
+                placeholder="Enter your email">
+            @error('email')
+                <div class="field-error">{{ $message }}</div>
+            @enderror
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
-            </x-primary-button>
-        </div>
+        <button type="submit" class="submit-btn">
+            Email Reset Link
+        </button>
     </form>
-</x-guest-layout>
+@endsection
+
+@section('form_footer')
+    Remembered your password?
+    <a href="{{ route('login') }}">Return to login</a>
+@endsection
