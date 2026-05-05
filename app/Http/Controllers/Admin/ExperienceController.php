@@ -18,11 +18,11 @@ class ExperienceController extends Controller
     public function addExperience(Request $request)
     {
         $data = $request->validate([
-            'company' => 'required|string|max:255',
-            'position' => 'required|string|max:255',
-            'employment_type' => 'nullable|string|max:255',
-            'location' => 'nullable|string|max:255',
-            'description' => 'nullable|string',
+            'company' => 'required',
+            'position' => 'required',
+            'employment_type' => 'nullable',
+            'location' => 'nullable',
+            'description' => 'nullable',
             'start_date' => 'required|date',
             'end_date' => 'nullable|date|after_or_equal:start_date',
         ]);

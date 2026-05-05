@@ -23,7 +23,8 @@ class ContactController extends Controller
         $contact = Contact::create($data);
 
         try {
-            Mail::to(config('mail.contact_notification.address'))
+            Mail::mailer(config('mail.contact_notification.mailer'))
+                ->to(config('mail.contact_notification.address'))
                 ->send(new ContactSubmitted($contact));
         } catch (Throwable $exception) {
             report($exception);
