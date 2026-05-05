@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EducationController;
+use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\ContactController as AdminContactController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\SkillController;
@@ -51,6 +52,11 @@ Route::middleware('auth')->prefix('admin')->group(function(){
             Route::get('/education', 'index')->name('education.index');
             Route::post('/education/addEdu', 'addEdu')->name('education.addEdu');
             Route::delete('/education/delete/{id}', 'delete')->name('education.delete');
+        });
+        Route::controller(ExperienceController::class)->group(function(){
+            Route::get('/experience', 'index')->name('experience.index');
+            Route::post('/experience/add', 'addExperience')->name('experience.add');
+            Route::delete('/experience/delete/{id}', 'delete')->name('experience.delete');
         });
 
         Route::controller(AdminContactController::class)->group(function () {

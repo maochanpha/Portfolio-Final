@@ -224,7 +224,7 @@
 
         .hero-meta {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 16px;
             margin-top: 42px;
         }
@@ -709,6 +709,7 @@
                         <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                         <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
                         <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+                        <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
                         <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
                         <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                     </ul>
@@ -756,6 +757,10 @@
                             <div class="stat-card">
                                 <span class="stat-value">{{ $educations->count() }}</span>
                                 <span class="stat-label">Education milestones</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-value">{{ $experiences->count() }}</span>
+                                <span class="stat-label">Experience highlights</span>
                             </div>
                         </div>
                     </div>
@@ -873,6 +878,50 @@
                 @else
                 <div class="empty-card">
                     Education details will appear here when records are available.
+                </div>
+                @endif
+            </div>
+        </section>
+
+        <section id="experience" class="section-space pt-0">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="section-kicker">Experience</div>
+                    <h2 class="section-title">Practical work that shaped how I build.</h2>
+                    <p class="section-copy">
+                        Real projects, internships, and hands-on roles continue to sharpen how I solve problems, collaborate, and deliver polished interfaces.
+                    </p>
+                </div>
+
+                @if($experiences->isNotEmpty())
+                <div class="timeline-stack">
+                    @foreach($experiences as $experience)
+                    <div class="timeline-card">
+                        <div class="timeline-content">
+                            <div class="timeline-date">
+                                {{ \Carbon\Carbon::parse($experience->start_date)->format('M Y') }}
+                                -
+                                {{ $experience->end_date ? \Carbon\Carbon::parse($experience->end_date)->format('M Y') : 'Present' }}
+                            </div>
+                            <h5>{{ $experience->position }}</h5>
+                            <p>
+                                <strong>{{ $experience->company }}</strong>
+                                @if($experience->employment_type || $experience->location)
+                                <br>
+                                {{ collect([$experience->employment_type, $experience->location])->filter()->implode(' • ') }}
+                                @endif
+                                @if($experience->description)
+                                <br><br>
+                                {{ $experience->description }}
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                @else
+                <div class="empty-card">
+                    Experience details will appear here when they are added from the admin panel.
                 </div>
                 @endif
             </div>

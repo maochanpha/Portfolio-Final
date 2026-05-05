@@ -16,7 +16,7 @@
 
             <div class="button-row">
                 <a href="{{ route('projects.index') }}" class="btn-main">Manage Projects</a>
-                <a href="{{ route('contacts.index') }}" class="btn-light">Review Messages</a>
+                <a href="{{ route('experience.index') }}" class="btn-light">Manage Experience</a>
             </div>
         </div>
 
@@ -71,6 +71,20 @@
             </div>
         </article>
 
+        <article class="metric-card tone-blue">
+            <div class="metric-top">
+                <div>
+                    <div class="metric-label">Experience</div>
+                    <div class="metric-value">{{ $experienceCount }}</div>
+                </div>
+                <span class="metric-icon">X</span>
+            </div>
+            <div>
+                <p class="metric-copy">Highlight real work, internships, and practical roles that strengthen your portfolio story.</p>
+                <a href="{{ route('experience.index') }}" class="metric-link">Manage experience -></a>
+            </div>
+        </article>
+
         <article class="metric-card tone-amber">
             <div class="metric-top">
                 <div>
@@ -119,6 +133,14 @@
                     </div>
                 </a>
 
+                <a href="{{ route('experience.index') }}" class="item-card">
+                    <div>
+                        <div class="tag blue">Experience</div>
+                        <h3 class="item-title" style="margin-top: 14px;">Manage experience</h3>
+                        <p class="item-copy">Add internships, jobs, and practical work that show how you apply your skills.</p>
+                    </div>
+                </a>
+
                 <a href="{{ route('contacts.index') }}" class="item-card">
                     <div>
                         <div class="tag amber">Inbox</div>
@@ -159,6 +181,14 @@
                         <p class="item-copy">Check start and end dates so the education story remains consistent.</p>
                     </div>
                     <span class="tag purple">{{ $educationCount }} items</span>
+                </div>
+
+                <div class="item-card">
+                    <div>
+                        <h3 class="item-title">Experience depth</h3>
+                        <p class="item-copy">Make sure each role explains what you did, where you worked, and what the experience added to your growth.</p>
+                    </div>
+                    <span class="tag blue">{{ $experienceCount }} items</span>
                 </div>
 
                 <div class="item-card">

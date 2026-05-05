@@ -766,7 +766,7 @@
                         <span>Portfolio Admin</span>
                     </a>
                     <p class="sidebar-copy">
-                        A calmer workspace for managing projects, skills, education, and incoming messages.
+                        A calmer workspace for managing projects, skills, experience, education, and incoming messages.
                     </p>
                 </div>
 
@@ -799,9 +799,16 @@
                         </span>
                         <span class="nav-arrow">-></span>
                     </a>
-                    <a href="{{ route('contacts.index') }}" class="nav-link {{ request()->routeIs('contacts.*') ? 'active' : '' }}">
+                    <a href="{{ route('experience.index') }}" class="nav-link {{ request()->routeIs('experience.*') ? 'active' : '' }}">
                         <span class="nav-label">
                             <span class="nav-icon">05</span>
+                            Experience
+                        </span>
+                        <span class="nav-arrow">-></span>
+                    </a>
+                    <a href="{{ route('contacts.index') }}" class="nav-link {{ request()->routeIs('contacts.*') ? 'active' : '' }}">
+                        <span class="nav-label">
+                            <span class="nav-icon">06</span>
                             Messages
                         </span>
                         <span class="nav-arrow">-></span>
