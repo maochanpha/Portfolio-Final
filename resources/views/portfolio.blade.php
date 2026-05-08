@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         :root {
             --bg: #f4efe8;
@@ -1061,62 +1062,117 @@
                         <div class="col-lg-7">
                             <div class="contact-form-card h-100 bg-white">
                                 <div class="p-4 p-lg-5 text-dark">
-                                    <form action="{{ route('contact') }}" method="POST">
+
+                                    {{-- Success Message --}}
+                                    @if(session('success'))
+                                    <div class="alert alert-success">
+                                        {{ session('success') }}
+                                    </div>
+                                    @endif
+
+
+                                    <form action="{{ route('contact') }}" method="POST" autocomplete="on">
                                         @csrf
 
                                         <div class="row">
+
+
+                                        {{-- Name --}}
                                             <div class="col-md-6 mb-3">
-                                                <label for="name" class="form-label fw-semibold">Your Name</label>
+                                                <label for="name" class="form-label fw-semibold">
+                                                    Your Name
+                                                </label>
+
+
                                                 <input
                                                     type="text"
                                                     id="name"
                                                     name="name"
+
+                                                    autocomplete="name"
                                                     value="{{ old('name') }}"
                                                     class="form-control contact-input @error('name') is-invalid @enderror"
                                                     placeholder="Enter your name"
                                                     required>
+
+
                                                 @error('name')
-                                                <div class="invalid-feedback d-block">{{ $message }}</div>
+                                                <div class="invalid-feedback d-block">
+                                                    {{ $message }}
+
+                                                </div>
                                                 @enderror
                                             </div>
 
+
+                                            {{-- Email --}}
                                             <div class="col-md-6 mb-3">
-                                                <label for="email" class="form-label fw-semibold">Your Email</label>
+                                                <label for="email" class="form-label fw-semibold">
+                                                    Your Email
+                                                </label>
+
+
                                                 <input
                                                     type="email"
                                                     id="email"
                                                     name="email"
+
+                                                    autocomplete="email"
                                                     value="{{ old('email') }}"
                                                     class="form-control contact-input @error('email') is-invalid @enderror"
                                                     placeholder="Enter your email"
                                                     required>
+
+
                                                 @error('email')
-                                                <div class="invalid-feedback d-block">{{ $message }}</div>
+                                                <div class="invalid-feedback d-block">
+                                                    {{ $message }}
+
+                                                </div>
                                                 @enderror
                                             </div>
 
-                                            <div class="col-12 mb-3">
-                                                <label for="message" class="form-label fw-semibold">Message</label>
+                                            {{-- Message --}}
+                                            <div class="col-12 mb-4">
+                                                <label for="message" class="form-label fw-semibold">
+                                                    Message
+                                                </label>
+
+
                                                 <textarea
                                                     id="message"
                                                     name="message"
                                                     rows="6"
+
+                                                    autocomplete="off"
                                                     class="form-control contact-input @error('message') is-invalid @enderror"
                                                     placeholder="Write your message here..."
                                                     required>{{ old('message') }}</textarea>
+
+
                                                 @error('message')
-                                                <div class="invalid-feedback d-block">{{ $message }}</div>
+                                                <div class="invalid-feedback d-block">
+                                                    {{ $message }}
+
+                                                </div>
                                                 @enderror
                                             </div>
 
+
+                                            {{-- Submit Button --}}
                                             <div class="col-12">
-                                                <button type="submit" class="btn btn-main border-0">
+
+                                            <button type="submit" class="btn btn-main border-0 px-4 py-3">
                                                     <i class="bi bi-send me-2"></i>
                                                     Send Message
                                                 </button>
                                             </div>
+
+
                                         </div>
                                     </form>
+
+
                                 </div>
                             </div>
                         </div>
@@ -1134,5 +1190,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
+
 
 </html>
