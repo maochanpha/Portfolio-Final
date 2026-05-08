@@ -1061,7 +1061,7 @@
                         <div class="col-lg-7">
                             <div class="contact-form-card h-100 bg-white">
                                 <div class="p-4 p-lg-5 text-dark">
-                                    <form action="{{ route('contact') }}" method="POST">
+                                    <form action="{{ secure_url('/contact') }}" method="POST" autocomplete="on">
                                         @csrf
 
                                         <div class="row">
